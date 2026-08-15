@@ -1,0 +1,13 @@
+Asset_ID,Category,Asset_or_process,Primary_owner,Location,Confidentiality,Integrity,Availability,Status
+IAM-01,Identity,Microsoft Entra ID tenant,IT / Management,Microsoft cloud,High,High,High,"Configuration unknown"
+IAM-02,Identity,Privileged and emergency identities,IT / Management / MSP,Multiple,High,High,High,"Population and design unknown"
+APP-01,Application,Microsoft 365,IT / Business,Microsoft cloud,High,High,High,"Configuration unknown"
+APP-02,Application,Procore,Project Operations,Procore cloud,High,High,High,"Access model unknown"
+APP-03,Application,QuickBooks Enterprise,Finance,"Hosting unknown",High,High,High,"Architecture unknown"
+DEV-01,Endpoint,Windows laptops,IT / MSP,"Office remote job sites",High,High,High,"Count and control coverage unknown"
+DEV-02,Endpoint,Company mobile and BYOD,IT / Users,Mobile,High,High,Moderate,"Management status unknown"
+NET-01,Network,Firewall VPN and office network,IT / MSP,"Office/cloud unknown",High,High,High,"Architecture unknown"
+PROC-01,Process,ACH wire and vendor changes,Finance / Management,"Bank QB email",High,High,High,"Control operation unknown"
+PROC-02,Process,Backup and recovery,IT / MSP / owners,Unknown,High,High,High,"Coverage and testing unknown"
+TP-01,Third party,MSP privileged dependency,Management,"Remote/admin tools unknown",High,High,High,"Access governance unknown"
+TP-02,Third party,Subcontractor collaboration,Project Operations,"Procore/M365",High,High,Moderate,"Roster and reviews unknown"
