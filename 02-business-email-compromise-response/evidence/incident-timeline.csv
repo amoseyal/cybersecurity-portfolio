@@ -1,0 +1,17 @@
+timeline_id,timestamp_utc,timestamp_et,event_type,actor_or_system,summary,evidence_refs,confidence
+TL-001,2026-08-11T12:02:14Z,2026-08-11 08:02:14 EDT,Authentication,AP specialist,Normal baseline sign-in,SIG-001,Confirmed
+TL-002,2026-08-12T11:42:03Z,2026-08-12 07:42:03 EDT,Authentication,Unknown actor,Unsuccessful sign-in from unfamiliar source,SIG-002,Confirmed
+TL-003,2026-08-12T11:44:29Z,2026-08-12 07:44:29 EDT,Authentication,Unknown actor,Successful sign-in from unfamiliar source,SIG-003,Confirmed
+TL-004,2026-08-12T11:47:18Z,2026-08-12 07:47:18 EDT,Mailbox modification,Unknown actor,Finance-targeting inbox rule created,UAL-001,Confirmed
+TL-005,2026-08-12T11:51:06Z,2026-08-12 07:51:06 EDT,Mailbox access,Unknown actor,Subcontractor conversation accessed,UAL-002,Confirmed
+TL-006,2026-08-12T12:16:42Z,2026-08-12 08:16:42 EDT,Email,Unknown actor,First fraudulent external message sent,UAL-003|EML-001,Confirmed
+TL-007,2026-08-12T12:41:33Z,2026-08-12 08:41:33 EDT,Email,Unknown actor,Fraudulent external follow-up sent,UAL-004|EML-002,Confirmed
+TL-008,2026-08-12T13:11:05Z,2026-08-12 09:11:05 EDT,Email,Unknown actor,Payment-change request sent internally,EML-003,Confirmed
+TL-009,2026-08-12T13:19:00Z,2026-08-12 09:19:00 EDT,Business control,Project accountant,Independent callback disproves bank change; payment held,INTAKE-01,Scenario fact
+TL-010,2026-08-12T13:24:00Z,2026-08-12 09:24:00 EDT,Escalation,Finance,Incident escalated to IT and MSP,INTAKE-02,Scenario fact
+TL-011,2026-08-12T13:31:02Z,2026-08-12 09:31:02 EDT,Containment,MSP IR administrator,Affected account disabled,UAL-005,Confirmed
+TL-012,2026-08-12T13:34:19Z,2026-08-12 09:34:19 EDT,Containment,MSP IR administrator,Refresh-token revocation initiated,UAL-006,Confirmed
+TL-013,2026-08-12T13:39:44Z,2026-08-12 09:39:44 EDT,Eradication,MSP IR administrator,Malicious inbox rule removed,UAL-007,Confirmed
+TL-014,2026-08-12T14:05:00Z,2026-08-12 10:05:00 EDT,Notification,Incident lead,External recipient warned by trusted channel,INTAKE-03,Scenario fact
+TL-015,2026-08-12T16:20:00Z,2026-08-12 12:20:00 EDT,Scoping,Incident lead,Initial tenant hunting completed with no additional matches identified,INTAKE-04,Scenario fact
+TL-016,2026-08-12T20:30:00Z,2026-08-12 16:30:00 EDT,Recovery,IT and AP specialist,Controlled access restored after identity reset,INTAKE-05,Scenario fact

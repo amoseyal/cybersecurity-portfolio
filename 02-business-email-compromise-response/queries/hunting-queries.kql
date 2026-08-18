@@ -1,0 +1,70 @@
+// SIMULATED PORTFOLIO QUERIES
+// Adapt table names, fields, time range, licensing, and retention to the authorized environment.
+
+// 1. Activity from the simulated unfamiliar documentation-range IP
+let startTime = datetime(2026-08-12T11:30:00Z);
+let endTime = datetime(2026-08-12T21:00:00Z);
+let suspiciousIp = "203.0.113.77";
+SigninLogs
+| where TimeGenerated between (startTime .. endTime)
+| where IPAddress == suspiciousIp
+| project TimeGenerated, UserPrincipalName, IPAddress, Location, AppDisplayName,
+          ClientAppUsed, ResultType, CorrelationId, ConditionalAccessStatus
+| order by TimeGenerated asc
+
+// 2. Sign-ins and audit activity for the affected identity
+let startTime = datetime(2026-08-12T11:30:00Z);
+let endTime = datetime(2026-08-12T21:00:00Z);
+let affectedUser = "ap.specialist@meridianbuildgroup.example";
+union isfuzzy=true
+(
+    SigninLogs
+    | where UserPrincipalName =~ affectedUser
+    | project TimeGenerated, Source="SigninLogs", Operation=AppDisplayName,
+              User=UserPrincipalName, IPAddress, Detail=strcat("ResultType=", ResultType)
+),
+(
+    OfficeActivity
+    | where UserId =~ affectedUser or MailboxOwnerUPN =~ affectedUser
+    | project TimeGenerated, Source="OfficeActivity", Operation,
+              User=UserId, IPAddress=ClientIP, Detail=Parameters
+)
+| where TimeGenerated between (startTime .. endTime)
+| order by TimeGenerated asc
+
+// 3. Inbox-rule and forwarding changes
+let startTime = datetime(2026-08-12T11:30:00Z);
+let endTime = datetime(2026-08-12T21:00:00Z);
+OfficeActivity
+| where TimeGenerated between (startTime .. endTime)
+| where OfficeWorkload =~ "Exchange"
+| where Operation in~ ("New-InboxRule", "Set-InboxRule", "UpdateInboxRules",
+                       "Set-Mailbox", "Add-MailboxPermission")
+| project TimeGenerated, UserId, Operation, ClientIP, Parameters, ResultStatus
+| order by TimeGenerated asc
+
+// 4. Search the synthetic Exchange session ID.
+// Do not assume this equals an Entra sign-in CorrelationId. Depending on the
+// connector and record type, SessionId may remain inside operation properties.
+let startTime = datetime(2026-08-12T11:30:00Z);
+let endTime = datetime(2026-08-12T21:00:00Z);
+let suspiciousExchangeSession = "88888888-8888-4888-8888-888888888888";
+OfficeActivity
+| where TimeGenerated between (startTime .. endTime)
+| where tostring(OperationProperties) has suspiciousExchangeSession
+   or tostring(Parameters) has suspiciousExchangeSession
+   or tostring(ExtendedProperties) has suspiciousExchangeSession
+| project TimeGenerated, UserId, Operation, ClientIP, OperationProperties,
+          Parameters, ExtendedProperties
+| order by TimeGenerated asc
+
+// 5. Authentication-method and application-consent review
+let startTime = datetime(2026-08-12T11:30:00Z);
+let endTime = datetime(2026-08-12T21:00:00Z);
+let affectedUser = "ap.specialist@meridianbuildgroup.example";
+AuditLogs
+| where TimeGenerated between (startTime .. endTime)
+| where tostring(TargetResources) has affectedUser
+| where OperationName has_any ("authentication method", "consent", "service principal",
+                               "application", "role")
+| project TimeGenerated, OperationName, InitiatedBy, TargetResources, Result, CorrelationId

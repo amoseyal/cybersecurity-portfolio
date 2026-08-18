@@ -1,0 +1,5 @@
+event_id,timestamp_utc,message_id,sender,recipient,direction,subject,delivery_status,related_invoice,amount_usd,analyst_classification,source_note
+EML-001,2026-08-12T12:16:42Z,MSG-101,ap.specialist@meridianbuildgroup.example,billing@southcoaststeel.example,Outbound,RE: Invoice SCS-8841 - August draw,Delivered,SCS-8841,184250,Fraudulent,Replacement bank instructions requested
+EML-002,2026-08-12T12:41:33Z,MSG-102,ap.specialist@meridianbuildgroup.example,billing@southcoaststeel.example,Outbound,RE: Invoice SCS-8841 - August draw,Delivered,SCS-8841,184250,Fraudulent,Urgent follow-up before cutoff
+EML-003,2026-08-12T13:11:05Z,MSG-103,ap.specialist@meridianbuildgroup.example,project.accountant@meridianbuildgroup.example,Internal,Updated ACH - SCS-8841,Delivered,SCS-8841,184250,Fraudulent,Internal payment-change request
+EML-004,2026-08-12T14:08:17Z,MSG-104,incident.lead@meridianbuildgroup.example,billing@southcoaststeel.example,Outbound,Security notice regarding SCS-8841,Delivered,SCS-8841,184250,Response notification,Sent after trusted-channel telephone notice
