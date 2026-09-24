@@ -4,7 +4,7 @@ Practical cybersecurity projects, security assessments, investigations, and tech
 
 ## Featured Projects
 
-### [01 — Meridian Build Group Cybersecurity Risk Assessment](./01-meridian-risk-assessment/)
+### 01 — [Meridian Build Group Cybersecurity Risk Assessment](./01-meridian-risk-assessment/)
 
 A simulated initial cybersecurity risk assessment for a fictional South Florida commercial construction and real-estate-development company.
 
@@ -19,7 +19,7 @@ The project demonstrates:
 
 > All organizations, evidence, findings, risk ratings, and business data are fictional and simulated. No real organization was assessed.
 
-### [02 — Meridian Build Group Business Email Compromise Incident Response](./02-business-email-compromise-response/)
+### 02 — [Meridian Build Group Business Email Compromise Incident Response](./02-business-email-compromise-response/)
 
 A simulated Microsoft 365 incident-response investigation involving a compromised accounts-payable mailbox and an attempted ACH-payment diversion at the same fictional company.
 
