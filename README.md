@@ -1,10 +1,14 @@
-# cybersecurity-portfolio
+# Cybersecurity Portfolio
 
-Practical cybersecurity projects, security assessments, investigations, and technical documentation.
+A collection of applied cybersecurity projects focused on risk assessment, incident response, security analytics, and defensive security.
+
+The portfolio demonstrates the application of cybersecurity frameworks, technical analysis, security tooling, data analysis, and business-risk concepts through documented projects and simulated security scenarios.
 
 ## Featured Projects
 
-### 01 — [Meridian Build Group Cybersecurity Risk Assessment](./01-meridian-risk-assessment/)
+### 01 — [Meridian Risk Assessment](./01-meridian-risk-assessment/)
+
+**Governance, Risk & Compliance · Risk Assessment · NIST CSF · CIS Controls**
 
 A simulated initial cybersecurity risk assessment for a fictional South Florida commercial construction and real-estate-development company.
 
@@ -19,7 +23,11 @@ The project demonstrates:
 
 > All organizations, evidence, findings, risk ratings, and business data are fictional and simulated. No real organization was assessed.
 
-### 02 — [Meridian Build Group Business Email Compromise Incident Response](./02-business-email-compromise-response/)
+---
+
+### 02 — [Business Email Compromise Response](./02-business-email-compromise-response/)
+
+**Incident Response · Microsoft 365 · Entra ID · Exchange Online · KQL · R**
 
 A simulated Microsoft 365 incident-response investigation involving a compromised accounts-payable mailbox and an attempted ACH-payment diversion at the same fictional company.
 
@@ -36,11 +44,16 @@ The project demonstrates:
 
 > All organizations, identities, domains, IP addresses, logs, messages, indicators, financial values, findings, and response actions are fictional and simulated. No real incident occurred and no real organization was investigated.
 
+---
+
 ### 03 — [Authentication Anomaly Analyzer](https://github.com/amoseyal/auth-anomaly-analyzer)
+
+**Security Analytics · Detection Engineering · Python · pandas · pytest**
 
 A Python-based security analytics tool that analyzes structured authentication logs for suspicious login behavior.
 
 The project demonstrates:
+
 - Python-based security log analysis with pandas
 - Brute-force and password-spraying detection
 - Correlation of successful logins following repeated authentication failures
@@ -50,3 +63,18 @@ The project demonstrates:
 - Automated unit and integration testing with pytest
 
 The project is maintained as a standalone repository with source code, synthetic authentication data, documentation, and a 14-test automated test suite.
+
+## Portfolio Focus
+
+The projects in this portfolio currently demonstrate practical work across:
+
+- Cybersecurity risk assessment and remediation planning
+- Governance and security-framework mapping
+- Incident response and evidence analysis
+- Microsoft 365 identity and email security
+- Business email compromise investigation
+- Security analytics and detection engineering
+- Python, R, KQL, and structured security-data analysis
+- Technical and executive security communication
+
+Additional projects will be added as the portfolio develops.
