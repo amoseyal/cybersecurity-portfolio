@@ -78,3 +78,7 @@ The projects in this portfolio currently demonstrate practical work across:
 - Technical and executive security communication
 
 Additional projects will be added as the portfolio develops.
+
+## Licensing
+
+Individual projects in this portfolio contain their own copyright and use notices. Refer to each project's `LICENSE.md` file for the terms applicable to its content, code, queries, and supporting materials.
